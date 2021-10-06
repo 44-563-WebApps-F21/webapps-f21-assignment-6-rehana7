@@ -42,6 +42,34 @@ function processPhrase (){
 }
 </script>  
 
+<div class="container"> 
+    
+    <img src="Needlefish.jpg" img id="Needlefish" class="img-fluid" alt="picture of Needlefish" width=200 height=200 onclick="newImage()" value="Get images from form"> 
+    <script> 
+        var usingImage = 1;
+        function newImage (){ 
+        switch (usingImage){ 
+           case 1: 
+                document.getElementById('Needlefish').src="Needlefish.jpg" 
+                usingImage++
+                break;
+           case 2:
+                document.getElementById('Needlefish').src="Giraffe.jpg" 
+                usingImage++
+                break;
+           case 3:
+                document.getElementById('Needlefish').src="Reindeer.jpg" 
+                usingImage = 1
+                break;     
+                   
+
+        }
+    }
+        </script> 
+</div> 
+
+
+
 
 </body>
 </html> 

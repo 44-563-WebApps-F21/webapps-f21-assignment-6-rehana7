@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arithmetic </title>
+    </head>
+<body>
+
+<h2>Rehana computes</h2>
+
+<form>
+    <label for="form1_base">Enter a base </label>
+    <input type ="number" id="form1_base" name="form1_base" min=10 max=50 step=2 value=30> <br>
+
+    <label for="form1_exponent">Enter an exponent </label>
+    <input type ="number" id="form1_exponent" name="form1_exponent" min=10 autofocus> <br>
+
+    <input type="button" onclick="powers()" value="Compute">
+</form>
+
+
+<p id="result">Result </p>
+
+<script> 
+
+function powers (){ 
+    
+    base = document.getElementById("form1_base").value
+    exponent = document.getElementById("form1_exponent").value 
+    result = " "
+    out = document.getElementById("result")   
+    for(var i=1;i<=exponent;i++){
+        result = result +Math.pow(base,i) + " " 
+    }
+    out.innerHTML = "Powers of " + base + " are: " +result;
+
+   
+   
+    confirmed = confirm("Are these the values? "+age+" and "+nick)
+    
+    out = document.getElementById("result")
+    if(confirmed){
+        out.innerHTML = "Values were confirmed"
+    } else {
+        out.innerHTML = "Values were not confirmed"
+    }
+}
+</script> 
+
+</body>
+</html> 

@@ -9,7 +9,7 @@
 
 <form>
     <label for="form1_base">Enter a base </label>
-    <input type ="number" id="form1_base" name="form1_base" min=10 max=50 step=2 value=30> <br>
+    <input type ="number" id="form1_base" name="form1_base" min=10 max=50 step=2 value=10> <br>
 
     <label for="form1_exponent">Enter an exponent </label>
     <input type ="number" id="form1_exponent" name="form1_exponent" min=10 autofocus> <br>
@@ -32,19 +32,42 @@ function powers (){
         result = result +Math.pow(base,i) + " " 
     }
     out.innerHTML = "Powers of " + base + " are: " +result;
-
    
-   
-    confirmed = confirm("Are these the values? "+age+" and "+nick)
-    
-    out = document.getElementById("result")
-    if(confirmed){
-        out.innerHTML = "Values were confirmed"
-    } else {
-        out.innerHTML = "Values were not confirmed"
-    }
 }
 </script> 
+<form>
+    <input type="radio" id="rg1_plus" name="calculation" value="plus" onclick="processRadio()" checked >
+    <label for="rg1_plus">+</label></br>
+  
+    <input type="radio" id="rg1_minus" name="calculation" onclick="processRadio()" value="minus">
+    <label for="rg1_minus">-</label></br>
+  
+    <input type="radio" id="rg1_times" name="calculation"  onclick="processRadio()" value="times">
+    <label for="rg1_times">*</label></br>
+
+    <input type="radio" id="rg1_divide" name="calculation" onclick="processRadio()" value="divide">
+    <label for="rg1_divide">/</label></br>
+  </form> 
+  <p id= result1>Results </p> 
+  <script>
+      function processRadio(){
+        base = document.getElementById("form1_base").value
+    exponent = document.getElementById("form1_exponent").value 
+    out1 = document.getElementById("result1")  
+    if(document.getElementById('rg1_plus').checked){
+        out1.innerHTML = "result of "+ base +"  + " + exponent + " is : " + (Number(base)+Number(exponent))
+    }
+    if(document.getElementById('rg1_minus').checked){
+        out1.innerHTML = "result of "+ base +"  - " + exponent + " is : " + (Number(base)-Number(exponent))
+    }
+    if(document.getElementById('rg1_times').checked){
+        out1.innerHTML = "result of "+ base +"  * " + exponent + " is : " + (Number(base)*Number(exponent))
+    }
+    if(document.getElementById('rg1_divide').checked){
+        out1.innerHTML = "result of "+ base +"  / " + exponent + " is : " + (Number(base)/Number(exponent))
+    }
+ }
+  </script>
 
 </body>
-</html> 
+</html>

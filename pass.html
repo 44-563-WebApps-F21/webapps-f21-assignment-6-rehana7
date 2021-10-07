@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
  <head>
-     <title>Learn JavaScript </title>
+     <title>Learn JavaScript </title> 
+     <style>
+        body {
+          background-image: url('bluescreen.png');
+        }
+        </style>
  </head>
 <body>
 
@@ -22,25 +27,38 @@
 
 <script> 
 var correct = 0;
-    var wrong = 0;
+    var wrong = 0; 
+    var count = 0;
 function processPhrase (){ 
     
     console.log("Getting form values")
     secretPhrase = document.getElementById("form1_secretPhrase").value
     phraseCheck = document.getElementById("form1_phraseCheck").value 
 
-    if(secretPhrase == phraseCheck){ 
+    if(secretPhrase == phraseCheck){  
+        count = 0;
         correct++; 
         alert("Access allowed");
         document.getElementById("result").innerHTML = "The value of correct is: " + correct;
     } else {
-        wrong++;
+        wrong++; 
+        count++;
         alert("Access denied");
-        document.getElementById("result").innerHTML = "The value of wrong is: " + wrong;
+        document.getElementById("result").innerHTML = "The value of wrong is: " + wrong; 
+        if(count >= 3){
+            if(wrong >=3){
+                blockaccount();
+            }
+        }
       
     }
+} 
+function blockaccount(){
+    alert("Account Locked")
 }
+
 </script>  
+ 
 
 <div class="container"> 
     
@@ -66,7 +84,7 @@ function processPhrase (){
         }
     }
         </script> 
-</div> 
+</div>  
 
 
 

@@ -41,7 +41,29 @@ function orderCar(){
     out.innerHTML = Object.values(my_car);
 
 }
-</script> 
+</script>  
+
+<form>
+    <label for="property">Enter a property </label>
+    <input type ="text" id="property" name="property"  value="color"> <br>
+
+    <label for="valueofprop">Enter a value</label>
+    <input type ="text" id="valueofprop" name="valueofprop" autofocus> <br> 
+
+    <input type="button" onclick="updateCar()" value="Update the car">
+</form> 
+<p id ="result1" > Result</p> 
+<script>
+    function updateCar(){
+        my_car.prop = document.getElementById("property").value;
+        my_car.valofprop = document.getElementById("valueofprop").value;
+        console.log(my_car)
+        document.getElementById("result1").innerHTML = Object.values(my_car);
+    }
+</script>
+
+
+
 
 </body>
 </html> 

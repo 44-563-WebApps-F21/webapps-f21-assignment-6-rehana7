@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Car Page </title>
+    </head>
+<body>
+
+<h2>Rehana orders a car</h2>
+
+<form>
+    <label for="electric">Electric </label>
+    <input type ="checkbox" id="electric" name="electric" > <br>
+
+    <label for="ac">AC</label>
+    <input type ="checkbox" id="ac" name="ac" autofocus> <br> 
+
+    <label for="gps">GPS</label>
+    <input type ="checkbox" id="gps" name="gps" autofocus> <br>
+
+    <input type="button" onclick="orderCar()" value="Order a car">
+</form>
+
+
+<p id="result">Result of your selection</p>
+
+<script> 
+ var my_car={}
+out= document.getElementById("result")
+function orderCar(){
+    Electric = document.getElementById("electric")
+    Ac = document.getElementById("ac")
+    Gps = document.getElementById("gps")
+    my_car = {
+            Electric: false,
+            AC: false,
+            GPS: false
+            };
+    my_car.Electric = Electric.checked
+    my_car.AC = Ac.checked
+    my_car.GPS = Gps.checked
+    out.innerHTML = Object.values(my_car);
+
+}
+</script> 
+
+</body>
+</html> 
